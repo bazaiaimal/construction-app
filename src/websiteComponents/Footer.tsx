@@ -5,7 +5,6 @@ import {
   Stack,
   Text,
   Flex,
-  Tag,
   useColorModeValue,
   Image,
 } from "@chakra-ui/react";
@@ -43,7 +42,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 export default function Footer() {
   return (
-    <Box bg="black" color="white">
+    <Box bg="black" color="white" marginTop="40%">
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid
           columns={{ base: 1, sm: 2, md: 3 }}
@@ -56,13 +55,10 @@ export default function Footer() {
               Home
             </Box>
             <Box as="a" href={"#"}>
-              Services
-            </Box>
-            <Box as="a" href={"#"}>
-              Careers
-            </Box>
-            <Box as="a" href={"#"}>
               About Us
+            </Box>
+            <Box as="a" href={"#"}>
+              Services
             </Box>
             <Box as="a" href={"#"}>
               Contact Us
@@ -102,12 +98,6 @@ export default function Footer() {
             </Box>
             <Box as="a" href={"#"}>
               LinkedIn
-            </Box>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Contact Us</ListHeader>
-            <Box>
-              <SendEmail />
             </Box>
           </Stack>
         </SimpleGrid>

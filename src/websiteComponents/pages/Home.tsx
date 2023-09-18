@@ -139,8 +139,8 @@ const HomePage = ({}: Props) => {
         flexDirection="column"
         alignItems="center"
         // justifyContent="center"
-        my={8}
-        padding={7}
+        my="auto"
+        padding={8}
       >
         <Heading as="h1" size="2xl" mb="4">
           Welcome to Our Construction Company
@@ -148,132 +148,133 @@ const HomePage = ({}: Props) => {
         <Text fontSize="xl" mb="8">
           We build your dreams into reality.
         </Text>
-        <HStack gap={3} height="180%" padding={4}>
+        <HStack gap={3} height="100%" padding={4}>
           <Box height={20}>
-            <Menu>
-              <MenuButton
-                bg="#161F30"
-                color="white"
-                size="lg"
-                as={Button}
-                rightIcon={<BsChevronDown />}
-              >
-                Civil Engineering Service: {selectedService?.type}
-              </MenuButton>
-              <MenuList bg="gray">
-                {civilServices.map((service) => (
-                  <MenuItem
-                    onClick={(e) => onSelectCivil(e, service)}
-                    key={service.id}
-                  >
-                    {service.type}
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-            <Text padding={3}>
-              {selectedService ? (
-                <p>{selectedService.description}</p>
-              ) : (
-                civilServices.map((service) => <p>{service.description}</p>)
-              )}
-            </Text>
-            <Menu>
-              <MenuButton
-                bg="#161F30"
-                color="white"
-                size="lg"
-                as={Button}
-                rightIcon={<BsChevronDown />}
-              >
-                Electrical Engineering Services:
-                {selectedElectricalService?.type}
-              </MenuButton>
-              <MenuList bg="gray">
-                {electricalServices.map((service) => (
-                  <MenuItem
-                    onClick={(e) => onSelectElectrical(e, service)}
-                    key={service.id}
-                  >
-                    {service.type}
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-            <Text padding={3}>
-              {selectedElectricalService ? (
-                <p>{selectedElectricalService.description}</p>
-              ) : (
-                electricalServices.map((service) => (
-                  <p>{service.description}</p>
-                ))
-              )}
-            </Text>
-            <Menu>
-              <MenuButton
-                bg="#161F30"
-                color="white"
-                size="lg"
-                as={Button}
-                rightIcon={<BsChevronDown />}
-              >
-                Architectural Engineering Services:
-                {selectArchitectureService?.type}
-              </MenuButton>
-              <MenuList bg="gray">
-                {architecturalServices.map((service) => (
-                  <MenuItem
-                    onClick={(e) => onSelectArchitectural(e, service)}
-                    key={service.id}
-                  >
-                    {service.type}
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-            <Text padding={3}>
-              {selectArchitectureService ? (
-                <p>{selectArchitectureService.description}</p>
-              ) : (
-                architecturalServices.map((service) => (
-                  <p>{service.description}</p>
-                ))
-              )}
-            </Text>
-            <Menu>
-              <MenuButton
-                bg="#161F30"
-                color="white"
-                size="lg"
-                as={Button}
-                rightIcon={<BsChevronDown />}
-              >
-                Technical Engineering Services:
-                {selectTechnicalService?.type}
-              </MenuButton>
-              <MenuList bg="gray">
-                {techniciansServices.map((service) => (
-                  <MenuItem
-                    onClick={(e) => onSelectTechnical(e, service)}
-                    key={service.id}
-                  >
-                    {service.type}
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-            <Text padding={3}>
-              {selectTechnicalService ? (
-                <p>{selectTechnicalService.description}</p>
-              ) : (
-                techniciansServices.map((service) => (
-                  <p>{service.description}</p>
-                ))
-              )}
-            </Text>
+            <HStack display="flex" flexDirection="column">
+              <Menu>
+                <MenuButton
+                  bg="#161F30"
+                  color="white"
+                  size="lg"
+                  as={Button}
+                  rightIcon={<BsChevronDown />}
+                >
+                  Civil Engineering Service: {selectedService?.type}
+                </MenuButton>
+                <MenuList bg="gray">
+                  {civilServices.map((service) => (
+                    <MenuItem
+                      onClick={(e) => onSelectCivil(e, service)}
+                      key={service.id}
+                    >
+                      {service.type}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </Menu>
+              <Text padding={3}>
+                {selectedService ? (
+                  <p>{selectedService.description}</p>
+                ) : (
+                  civilServices.map((service) => <p>{service.description}</p>)
+                )}
+              </Text>
+              <Menu>
+                <MenuButton
+                  bg="#161F30"
+                  color="white"
+                  size="lg"
+                  as={Button}
+                  rightIcon={<BsChevronDown />}
+                >
+                  Electrical Engineering Services:
+                  {selectedElectricalService?.type}
+                </MenuButton>
+                <MenuList bg="gray">
+                  {electricalServices.map((service) => (
+                    <MenuItem
+                      onClick={(e) => onSelectElectrical(e, service)}
+                      key={service.id}
+                    >
+                      {service.type}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </Menu>
+              <Text padding={3}>
+                {selectedElectricalService ? (
+                  <p>{selectedElectricalService.description}</p>
+                ) : (
+                  electricalServices.map((service) => (
+                    <p>{service.description}</p>
+                  ))
+                )}
+              </Text>
+              <Menu>
+                <MenuButton
+                  bg="#161F30"
+                  color="white"
+                  size="lg"
+                  as={Button}
+                  rightIcon={<BsChevronDown />}
+                >
+                  Architectural Engineering Services:
+                  {selectArchitectureService?.type}
+                </MenuButton>
+                <MenuList bg="gray">
+                  {architecturalServices.map((service) => (
+                    <MenuItem
+                      onClick={(e) => onSelectArchitectural(e, service)}
+                      key={service.id}
+                    >
+                      {service.type}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </Menu>
+              <Text padding={3}>
+                {selectArchitectureService ? (
+                  <p>{selectArchitectureService.description}</p>
+                ) : (
+                  architecturalServices.map((service) => (
+                    <p>{service.description}</p>
+                  ))
+                )}
+              </Text>
+              <Menu>
+                <MenuButton
+                  bg="#161F30"
+                  color="white"
+                  size="lg"
+                  as={Button}
+                  rightIcon={<BsChevronDown />}
+                >
+                  Technical Engineering Services:
+                  {selectTechnicalService?.type}
+                </MenuButton>
+                <MenuList bg="gray">
+                  {techniciansServices.map((service) => (
+                    <MenuItem
+                      onClick={(e) => onSelectTechnical(e, service)}
+                      key={service.id}
+                    >
+                      {service.type}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </Menu>
+              <Text padding={3}>
+                {selectTechnicalService ? (
+                  <p>{selectTechnicalService.description}</p>
+                ) : (
+                  techniciansServices.map((service) => (
+                    <p>{service.description}</p>
+                  ))
+                )}
+              </Text>
+            </HStack>
           </Box>
         </HStack>
-        <Container></Container>
       </Box>
     </>
   );
