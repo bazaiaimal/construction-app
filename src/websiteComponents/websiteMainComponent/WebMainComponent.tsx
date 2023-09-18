@@ -1,9 +1,9 @@
 import { Grid, GridItem, HStack } from "@chakra-ui/react";
-import { NavBar } from "./websiteComponents/NavBar";
-import Footer from "./websiteComponents/Footer";
-import HomePage from "./websiteComponents/pages/Home";
+import { NavBar } from "../NavBar";
+import { Home } from "../pages/Home";
+import Footer from "../Footer";
 
-function App() {
+export const WebMainComponent = () => {
   return (
     <>
       <Grid
@@ -17,14 +17,12 @@ function App() {
           </HStack>
         </GridItem>
         <GridItem area="main">
-          <HomePage />
+          <Home />
         </GridItem>
-        <GridItem area="footer" mt="25%">
+        <GridItem area="footer">
           <Footer />
         </GridItem>
       </Grid>
     </>
   );
-}
-
-export default App;
+};
