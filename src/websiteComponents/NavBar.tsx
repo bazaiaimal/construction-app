@@ -287,9 +287,9 @@ import "../App.css";
 function NavBar() {
   return (
     <header>
-      <nav>
+      <nav color="black">
         <ul>
-          <HStack padding={5} justifyContent="space-evenly" bg="black">
+          <HStack padding={5} justifyContent="space-evenly">
             <a href="/logo">
               <Image
                 src={Logo}
