@@ -286,7 +286,7 @@ import "../App.css";
 
 function NavBar() {
   return (
-    <header color="black">
+    <header>
       <nav>
         <ul>
           <HStack
