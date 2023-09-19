@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { HomePageSlider } from "../pageSliders/HomePageSlider";
+import { Link } from "react-router-dom";
 
 interface Props {
   id: number;
@@ -149,6 +150,10 @@ const HomePage = ({}: Props) => {
         <Text fontSize="xl" mb="8">
           We build your dreams into reality.
         </Text>
+
+        <Link to="/contact" className="btn btn-primary">
+          Contact Us
+        </Link>
         <HStack gap={3} height="100%" padding={4}>
           <Box height={20}>
             <HStack display="flex" flexDirection="column">

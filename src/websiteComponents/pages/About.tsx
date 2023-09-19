@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import AboutImage from "../../assets/Images/about.jpg";
 import { AboutPageSlider } from "../pageSliders/AboutSlider";
+import { Box } from "@chakra-ui/react";
 
 const About = () => {
   return (
@@ -28,6 +30,11 @@ const About = () => {
             Utility Companies.
           </p>
         </div>
+        <Box textAlign="center">
+          <Link to="/contact" className="btn btn-primary">
+            Contact Us
+          </Link>
+        </Box>
       </div>
     </>
   );

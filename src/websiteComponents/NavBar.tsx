@@ -32,7 +32,7 @@ function NavBar() {
               <Link to="/services">Services</Link>
             </li>
             <li>
-              <Link to="contact">Contact Us</Link>
+              <Link to="/contact">Contact Us</Link>
             </li>
           </HStack>
         </ul>
