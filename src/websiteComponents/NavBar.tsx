@@ -289,7 +289,7 @@ function NavBar() {
     <header>
       <nav>
         <ul>
-          <HStack padding={5} justifyContent="space-evenly">
+          <HStack padding={5} justifyContent="space-evenly" bg="black">
             <a href="/logo">
               <Image
                 src={Logo}
