@@ -2,3 +2,7 @@ ul li{
     font-weight: bold;
     font-size: x-large;
 }
+
+ul{
+    padding-left: 0% !important;
+}

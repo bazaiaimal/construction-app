@@ -7,11 +7,11 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Container,
   HStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
+import { HomePageSlider } from "../pageSliders/HomePageSlider";
 
 interface Props {
   id: number;
@@ -133,6 +133,7 @@ const HomePage = ({}: Props) => {
 
   return (
     <>
+      <HomePageSlider />
       <Box
         minHeight="100vh"
         display="flex"

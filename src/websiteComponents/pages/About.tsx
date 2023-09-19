@@ -1,8 +1,10 @@
 import AboutImage from "../../assets/Images/about.jpg";
+import { AboutPageSlider } from "../pageSliders/AboutSlider";
 
 const About = () => {
   return (
     <>
+      <AboutPageSlider />
       <div className="row">
         <div className="col-sm-12 col-md-10 col-lg-10 mx-auto mt-3">
           <img

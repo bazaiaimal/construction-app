@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import contactImage from "../../assets/Images/react-contact-image.png";
+import { ContactPageSlider } from "../pageSliders/ContactSlider";
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -34,6 +35,7 @@ const ContactPage: React.FC = () => {
 
   return (
     <>
+      <ContactPageSlider />
       <div className="row">
         <div className="col-sm-12 col-md-10 col-lg-4 mx-auto">
           <div className="container-fluid">

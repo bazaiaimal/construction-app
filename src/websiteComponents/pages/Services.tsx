@@ -3,10 +3,12 @@ import electricalImage from "../../assets/Images/electrical Service image.jpg";
 import architecturalImage from "../../assets/Images/architectural service image.png";
 import technicalImage from "../../assets/Images/technical service image.jpg";
 import { Image } from "@chakra-ui/react";
+import { ServicePageSlider } from "../pageSliders/ServicesSlider";
 
 export const Services = () => {
   return (
     <>
+      <ServicePageSlider />
       <div className="container">
         <div className="row mt-4">
           <div className="col-sm-12 col-md-10 col-lg-10 mx-auto">
