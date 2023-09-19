@@ -14,7 +14,7 @@ function NavBar() {
             backgroundColor="black"
             color="white"
           >
-            <a href="/logo">
+            <a href="">
               <Image
                 src={Logo}
                 boxSize="100px"
