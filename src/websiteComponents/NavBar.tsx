@@ -292,7 +292,7 @@ function NavBar() {
           <HStack
             padding={5}
             justifyContent="space-evenly"
-            bg="black"
+            backgroundColor="black"
             color="white"
           >
             <a href="/logo">
