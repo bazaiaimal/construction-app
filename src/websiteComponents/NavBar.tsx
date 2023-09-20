@@ -108,9 +108,9 @@ const Navbar: React.FC = () => {
 
   return (
     <Box bgColor="black" color="white">
-      <Flex p={4}>
+      <Flex p={4} justifyContent="space-evenly">
         <Image src={Logo} boxSize="80px" borderRadius="20px" alt="logo" />
-        <Spacer />
+        {/* <Spacer /> */}
         <IconButton
           aria-label="Toggle navigation"
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -144,6 +144,8 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
     textDecoration="none"
     _hover={{ textDecoration: "underline" }}
     whiteSpace="nowrap"
+    fontWeight="bold"
+    fontSize="2xl"
   >
     {children}
   </Text>

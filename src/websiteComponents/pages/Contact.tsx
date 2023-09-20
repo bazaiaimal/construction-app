@@ -57,7 +57,7 @@ const ContactPage: React.FC = () => {
                   name="name"
                   required
                   className="form-control"
-                  placeholder="Enter name"
+                  placeholder="*Enter name"
                   value={formData.name}
                   onChange={handleChange}
                 />
@@ -69,7 +69,7 @@ const ContactPage: React.FC = () => {
                   name="email"
                   required
                   className="form-control"
-                  placeholder="Enter email"
+                  placeholder="*Enter email"
                   value={formData.email}
                   onChange={handleChange}
                 />
@@ -85,7 +85,7 @@ const ContactPage: React.FC = () => {
                   cols={1}
                   required
                   className="form-control"
-                  placeholder="Enter message"
+                  placeholder="*Enter message"
                   value={formData.message}
                   onChange={handleChange}
                 />
