@@ -10,7 +10,13 @@ export const HomePageSlider = () => {
     <>
       <ChakraProvider theme={extendTheme(theme)}>
         <Box p={1} className="img-fluid">
-          <Carousel showThumbs={false} showStatus={false} infiniteLoop={true}>
+          <Carousel
+            showThumbs={false}
+            showStatus={false}
+            infiniteLoop={true}
+            autoPlay={true}
+            interval={3000}
+          >
             <div>
               <img src={slider1} alt="Image 1" />
             </div>
@@ -26,28 +32,3 @@ export const HomePageSlider = () => {
     </>
   );
 };
-
-// ImageSlider.js
-
-// import { ChakraProvider, Box } from "@chakra-ui/react";
-// import { Key } from "react";
-// import { Carousel } from "react-responsive-carousel";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-// const HomePageSlider = ({ images }: any) => {
-//   return (
-//     <ChakraProvider>
-//       <Box p={5}>
-//         <Carousel showThumbs={false} showStatus={false} infiniteLoop={true}>
-//           {images.map((image, index) => (
-//             <div key={index}>
-//               <img src={image.src} alt={image.alt} />
-//             </div>
-//           ))}
-//         </Carousel>
-//       </Box>
-//     </ChakraProvider>
-//   );
-// };
-
-// export default HomePageSlider;

@@ -102,6 +102,7 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Image } from "@chakra-ui/react";
 import Logo from "../assets/Images/akb.png";
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -122,9 +123,15 @@ const Navbar: React.FC = () => {
           alignItems="center"
         >
           <NavLink href="/home">Home</NavLink>
-          <NavLink href="/about">About</NavLink>
-          <NavLink href="/services">Services</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
+          <NavLink href="/about">
+            <Link to="/about">About Us</Link>
+          </NavLink>
+          <NavLink href="/services">
+            <Link to="/services">Services</Link>
+          </NavLink>
+          <NavLink href="/contact">
+            <Link to="/contact">Contact Us</Link>
+          </NavLink>
         </Box>
       </Flex>
     </Box>
