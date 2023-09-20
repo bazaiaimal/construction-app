@@ -8,6 +8,8 @@ import {
   MenuList,
   MenuItem,
   HStack,
+  Container,
+  Tooltip,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
@@ -136,12 +138,12 @@ const HomePage = ({}: Props) => {
     <>
       <HomePageSlider />
       <Box
-        minHeight="100vh"
+        minHeight="30vh"
         display="flex"
         flexDirection="column"
         alignItems="center"
         // justifyContent="center"
-        my="auto"
+        my="5"
         padding={8}
       >
         <Heading as="h1" size="2xl" mb="4">
@@ -150,13 +152,16 @@ const HomePage = ({}: Props) => {
         <Text fontSize="xl" mb="8">
           We build your dreams into reality.
         </Text>
-
-        <Link to="/contact" className="btn btn-primary">
+        <Link to="/contact" className="btn btn-outline-primary">
           Contact Us
         </Link>
-        <HStack gap={3} height="100%" padding={4}>
-          <Box height={20}>
-            <HStack display="flex" flexDirection="column">
+        {/* <HStack display="flex"> */}
+        <div className="container mt-4">
+          <div className="row">
+            <div
+              className="col-lg-6"
+              style={{ flexWrap: "wrap", height: "40%" }}
+            >
               <Menu>
                 <MenuButton
                   bg="#161F30"
@@ -165,7 +170,8 @@ const HomePage = ({}: Props) => {
                   as={Button}
                   rightIcon={<BsChevronDown />}
                 >
-                  Civil Engineering Service: {selectedService?.type}
+                  Civil Engineering Service:
+                  {selectedService?.type}
                 </MenuButton>
                 <MenuList bg="gray">
                   {civilServices.map((service) => (
@@ -177,14 +183,21 @@ const HomePage = ({}: Props) => {
                     </MenuItem>
                   ))}
                 </MenuList>
+                <Container>
+                  <Text padding={3}>
+                    {selectedService
+                      ? selectedService.description
+                      : civilServices.length > 0
+                      ? civilServices[0].description
+                      : "No Civil Services Avaliable"}
+                  </Text>
+                </Container>
               </Menu>
-              <Text padding={3}>
-                {selectedService ? (
-                  <p>{selectedService.description}</p>
-                ) : (
-                  civilServices.map((service) => <p>{service.description}</p>)
-                )}
-              </Text>
+            </div>
+            <div
+              className="col-lg-6"
+              style={{ flexWrap: "wrap", height: "40%" }}
+            >
               <Menu>
                 <MenuButton
                   bg="#161F30"
@@ -206,16 +219,20 @@ const HomePage = ({}: Props) => {
                     </MenuItem>
                   ))}
                 </MenuList>
+                <Container>
+                  <Text padding={3}>
+                    {selectedElectricalService
+                      ? selectedElectricalService.description
+                      : electricalServices.length > 0
+                      ? electricalServices[0].description
+                      : "No electrical services available."}
+                  </Text>
+                </Container>
               </Menu>
-              <Text padding={3}>
-                {selectedElectricalService ? (
-                  <p>{selectedElectricalService.description}</p>
-                ) : (
-                  electricalServices.map((service) => (
-                    <p>{service.description}</p>
-                  ))
-                )}
-              </Text>
+            </div>
+          </div>
+          <div className="row" style={{ height: "50%" }}>
+            <div className="col-lg-6">
               <Menu>
                 <MenuButton
                   bg="#161F30"
@@ -224,8 +241,7 @@ const HomePage = ({}: Props) => {
                   as={Button}
                   rightIcon={<BsChevronDown />}
                 >
-                  Architectural Engineering Services:
-                  {selectArchitectureService?.type}
+                  Architectural Service: {selectArchitectureService?.type}
                 </MenuButton>
                 <MenuList bg="gray">
                   {architecturalServices.map((service) => (
@@ -237,21 +253,20 @@ const HomePage = ({}: Props) => {
                     </MenuItem>
                   ))}
                 </MenuList>
+                <Text padding={3}>
+                  {selectArchitectureService
+                    ? selectArchitectureService.description
+                    : architecturalServices.length > 0
+                    ? architecturalServices[0].description
+                    : "No Architectural services avaliable"}
+                </Text>
               </Menu>
-              <Text padding={3}>
-                {selectArchitectureService ? (
-                  <p>{selectArchitectureService.description}</p>
-                ) : (
-                  architecturalServices.map((service) => (
-                    <p>{service.description}</p>
-                  ))
-                )}
-              </Text>
+            </div>
+            <div className="col-lg-6">
               <Menu>
                 <MenuButton
                   bg="#161F30"
                   color="white"
-                  size="lg"
                   as={Button}
                   rightIcon={<BsChevronDown />}
                 >
@@ -268,19 +283,20 @@ const HomePage = ({}: Props) => {
                     </MenuItem>
                   ))}
                 </MenuList>
+                <Container>
+                  <Text padding={3}>
+                    {selectTechnicalService
+                      ? selectTechnicalService.description
+                      : techniciansServices.length > 0
+                      ? techniciansServices[0].description
+                      : "No technical services avaliabel"}
+                  </Text>
+                </Container>
               </Menu>
-              <Text padding={3}>
-                {selectTechnicalService ? (
-                  <p>{selectTechnicalService.description}</p>
-                ) : (
-                  techniciansServices.map((service) => (
-                    <p>{service.description}</p>
-                  ))
-                )}
-              </Text>
-            </HStack>
-          </Box>
-        </HStack>
+            </div>
+          </div>
+        </div>
+        {/* </HStack> */}
       </Box>
     </>
   );

@@ -1,11 +1,4 @@
-import { Switch } from "@chakra-ui/react";
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  BrowserRouter,
-  Routes,
-} from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import HomePage from "./websiteComponents/pages/Home";
 import About from "./websiteComponents/pages/About";
 import Contact from "./websiteComponents/pages/Contact";

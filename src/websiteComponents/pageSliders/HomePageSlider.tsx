@@ -9,7 +9,7 @@ export const HomePageSlider = () => {
   return (
     <>
       <ChakraProvider theme={extendTheme(theme)}>
-        <Box p={5}>
+        <Box p={1} className="img-fluid">
           <Carousel showThumbs={false} showStatus={false} infiniteLoop={true}>
             <div>
               <img src={slider1} alt="Image 1" />

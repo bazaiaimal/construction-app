@@ -1,21 +1,15 @@
-import civilImage from "../../assets/Images/civilService image.jpg";
-import electricalImage from "../../assets/Images/electrical Service image.jpg";
-import architecturalImage from "../../assets/Images/architectural service image.png";
+import civilImage from "../../assets/Images/removeBG.png";
+import electricalImage from "../../assets/Images/removeBG1.png";
+import architecturalImage from "../../assets/Images/removeBG4.png";
 import technicalImage from "../../assets/Images/technical service image.jpg";
 import { Box, Image } from "@chakra-ui/react";
 import { ServicePageSlider } from "../pageSliders/ServicesSlider";
 import { Link } from "react-router-dom";
-
 export const Services = () => {
   return (
     <>
       <ServicePageSlider />
-      <div className="container">
-        <Box textAlign="center">
-          <Link to="/contact" className="btn btn-primary">
-            Contact Us
-          </Link>
-        </Box>
+      <div className="container mt-5">
         <div className="row mt-4">
           <div className="col-sm-12 col-md-10 col-lg-10 mx-auto">
             <Image
@@ -96,6 +90,16 @@ export const Services = () => {
           </div>
         </div>
       </div>
+
+      <Box textAlign="center">
+        <Link
+          to="/contact"
+          className="btn btn-outline-primary"
+          style={{ width: "40%" }}
+        >
+          Contact Us
+        </Link>
+      </Box>
     </>
   );
 };

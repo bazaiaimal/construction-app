@@ -36,7 +36,7 @@ const ContactPage: React.FC = () => {
   return (
     <>
       <ContactPageSlider />
-      <div className="row">
+      <div className="row mt-5">
         <div className="col-sm-12 col-md-10 col-lg-4 mx-auto">
           <div className="container-fluid">
             <img
@@ -45,6 +45,8 @@ const ContactPage: React.FC = () => {
               alt="contact image"
             />
           </div>
+        </div>
+        <div className="col-sm-12 col-md-10 col-lg-4 mx-auto">
           <div className="form-group p-3">
             <form onSubmit={handleSubmit}>
               <h1 className="h1">Contact Us</h1>

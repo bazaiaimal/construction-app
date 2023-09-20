@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import AboutImage from "../../assets/Images/about.jpg";
+import AboutImage from "../../assets/Images/about-removebg-preview (2).png";
 import { AboutPageSlider } from "../pageSliders/AboutSlider";
 import { Box } from "@chakra-ui/react";
 
@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       <AboutPageSlider />
-      <div className="row">
+      <div className="row mt-5">
         <div className="col-sm-12 col-md-10 col-lg-10 mx-auto mt-3">
           <img
             src={AboutImage}
@@ -31,7 +31,11 @@ const About = () => {
           </p>
         </div>
         <Box textAlign="center">
-          <Link to="/contact" className="btn btn-primary">
+          <Link
+            to="/contact"
+            className="btn btn-outline-primary"
+            style={{ width: "40%" }}
+          >
             Contact Us
           </Link>
         </Box>

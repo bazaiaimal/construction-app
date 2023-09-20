@@ -1,14 +1,14 @@
 import { ChakraProvider, Box, extendTheme, theme } from "@chakra-ui/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import contactSlider from "../../assets/Images/aboutSlider.webp";
-import contactSlider1 from "../../assets/Images/home slider 3.jpg";
+import contactSlider from "../../assets/Images/edited-slide7.jpg";
+import contactSlider1 from "../../assets/Images/edited-slide8.jpg";
 
 export const ContactPageSlider = () => {
   return (
     <>
       <ChakraProvider theme={extendTheme(theme)}>
-        <Box p={5}>
+        <Box p={1}>
           <Carousel showThumbs={false} showStatus={false} infiniteLoop={true}>
             <div>
               <img src={contactSlider} alt="contact Slider" />
