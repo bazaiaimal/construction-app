@@ -122,7 +122,9 @@ const Navbar: React.FC = () => {
           display={{ base: isOpen ? "block" : "none", md: "flex" }}
           alignItems="center"
         >
-          <NavLink href="/home">Home</NavLink>
+          <NavLink href="/home">
+            <Link to="/home">Home</Link>
+          </NavLink>
           <NavLink href="/about">
             <Link to="/about">About Us</Link>
           </NavLink>
