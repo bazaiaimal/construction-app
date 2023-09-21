@@ -179,7 +179,6 @@ const HomePage = ({}: Props) => {
         display="flex"
         flexDirection="column"
         alignItems="center"
-        // justifyContent="center"
         my="5"
         padding={8}
       >
@@ -189,9 +188,6 @@ const HomePage = ({}: Props) => {
         <Text fontSize="xl" mb="8">
           We build your dreams into reality.
         </Text>
-        <Link to="/contact" className="btn btn-outline-primary">
-          Contact Us
-        </Link>
         <div className="container mt-4 mb-3">
           <div className="row">
             <div

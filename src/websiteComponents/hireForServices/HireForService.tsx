@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  Box,
-  Image,
-  Heading,
-  Text,
-  Link,
-  Container,
-  Card,
-  CardBody,
-} from "@chakra-ui/react";
+import { Box, Image, Heading, Container } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 interface HireForServicesProps {
   imageUrl: string;
@@ -33,10 +25,9 @@ const HireForServices: React.FC<HireForServicesProps> = ({
               </Heading>
               <Container padding={2}>{description}</Container>
               <Link
-                href="/contact"
+                to="/contact"
                 className="btn btn-outline-primary"
                 color="#3B71CA"
-                _hover={{ textDecoration: "none" }}
               >
                 Contact Engineer
               </Link>
