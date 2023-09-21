@@ -103,6 +103,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Image } from "@chakra-ui/react";
 import Logo from "../assets/Images/akb.png";
 import { Link } from "react-router-dom";
+import { ColorModeSwitch } from "./colorModeSwitch/ColorModeSwitch";
 
 const Navbar: React.FC = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -134,6 +135,7 @@ const Navbar: React.FC = () => {
           <NavLink href="/contact">
             <Link to="/contact">Contact Us</Link>
           </NavLink>
+          <ColorModeSwitch />
         </Box>
       </Flex>
     </Box>
@@ -151,7 +153,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
     href={href}
     p="2"
     textDecoration="none"
-    _hover={{ textDecoration: "underline" }}
+    _hover={{ textDecoration: "none" }}
     whiteSpace="nowrap"
     fontWeight="bold"
     fontSize="2xl"
