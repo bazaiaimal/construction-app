@@ -21,7 +21,7 @@ const ContactPage: React.FC = () => {
     e.preventDefault();
     try {
       await axios.get(
-        `http://localhost:3000/SendEmail?receiverEmail=hello@gmail.com&subject=Assistance`
+        `http://localhost:3000/SendEmail?receiverEmail=ak9971259@gmail.com&subject=Assistance`
       );
 
       alert("Email sent successfully!");
@@ -93,7 +93,7 @@ const ContactPage: React.FC = () => {
               <button
                 type="submit"
                 name="submit"
-                className="btn btn-primary mt-3"
+                className="btn btn-outline-primary mt-3"
               >
                 Submit
               </button>

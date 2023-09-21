@@ -7,19 +7,25 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  HStack,
   Container,
-  Tooltip,
+  Image,
+  HStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { HomePageSlider } from "../pageSliders/HomePageSlider";
 import { Link } from "react-router-dom";
+import HireForServices from "../hireForServices/HireForService";
+import hireCivil from "../../assets/Images/civil profile.jpg";
+import hireElectrical from "../../assets/Images/electrical profile.jpg";
+import hireTechnical from "../../assets/Images/technical profile.jpg";
+import hireArchitectural from "../../assets/Images/architectural profile.jpg";
 
 interface Props {
   id: number;
   type: string;
   description: string;
+  // proImages: HireForServicesProps;
 }
 
 const HomePage = ({}: Props) => {
@@ -101,6 +107,37 @@ const HomePage = ({}: Props) => {
     },
   ];
 
+  const profileImages = [
+    {
+      id: 1,
+      Image: hireCivil,
+      title: "Shah Faisal",
+      description:
+        "Most civil engineers work full time, and some work more than 40 hours per week. Engineers who direct projects sometimes work extra hours to ensure that designs meet requirements and that projects are on track to meet deadlines.",
+    },
+    {
+      id: 2,
+      Image: hireElectrical,
+      title: "Aleena",
+      description:
+        "Electrical engineers design, develop, test and manage the manufacturing of electrical equipment, from electric motors and navigation systems to power generation equipment and the electrical components of vehicles and personal devices.",
+    },
+    {
+      id: 3,
+      Image: hireTechnical,
+      title: "Shanza",
+      description:
+        "A technical engineer assists an engineer in maintaining equipment and systems in perfect condition and overseeing the quality of a company's products and services. Technical engineers work in many industries and perform duties related to civil, mechanical, electronic and telecommunication engineering.",
+    },
+    {
+      id: 4,
+      Image: hireArchitectural,
+      title: "Aimal",
+      description:
+        "Architectural engineers apply practical and theoretical knowledge to the engineering design of buildings and building systems. The goal is to engineer high-performance buildings that are sustainable, resilient, economically viable, that ensure the safety, health, comfort, and productivity of occupants.",
+    },
+  ];
+
   const [selectedService, setSelectedService] = useState<Props>();
   const [selectedElectricalService, setSelectedElectricalService] =
     useState<Props>();
@@ -155,8 +192,7 @@ const HomePage = ({}: Props) => {
         <Link to="/contact" className="btn btn-outline-primary">
           Contact Us
         </Link>
-        {/* <HStack display="flex"> */}
-        <div className="container mt-4">
+        <div className="container mt-4 mb-3">
           <div className="row">
             <div
               className="col-lg-6"
@@ -253,13 +289,15 @@ const HomePage = ({}: Props) => {
                     </MenuItem>
                   ))}
                 </MenuList>
-                <Text padding={3}>
-                  {selectArchitectureService
-                    ? selectArchitectureService.description
-                    : architecturalServices.length > 0
-                    ? architecturalServices[0].description
-                    : "No Architectural services avaliable"}
-                </Text>
+                <Container>
+                  <Text padding={3}>
+                    {selectArchitectureService
+                      ? selectArchitectureService.description
+                      : architecturalServices.length > 0
+                      ? architecturalServices[0].description
+                      : "No Architectural services avaliable"}
+                  </Text>
+                </Container>
               </Menu>
             </div>
             <div className="col-lg-6">
@@ -296,7 +334,17 @@ const HomePage = ({}: Props) => {
             </div>
           </div>
         </div>
-        {/* </HStack> */}
+
+        <HStack padding={5}>
+          {profileImages.map((profile) => (
+            <HireForServices
+              key={profile.id}
+              imageUrl={profile.Image}
+              title={profile.title}
+              description={profile.description}
+            />
+          ))}
+        </HStack>
       </Box>
     </>
   );

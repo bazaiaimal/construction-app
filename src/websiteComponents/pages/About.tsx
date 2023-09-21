@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import AboutImage from "../../assets/Images/about-removebg-preview (2).png";
 import { AboutPageSlider } from "../pageSliders/AboutSlider";
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 const About = () => {
   return (
@@ -16,7 +16,7 @@ const About = () => {
           />
         </div>
         <div className="col-sm-12 col-md-10 col-lg-10 mx-auto mt-5">
-          <p>
+          <Text>
             In addition to creative web design and e-commerce web site design
             and development, MA web design company Interactive Palette offers an
             extensive roster of services including web hosting, search engine
@@ -28,7 +28,7 @@ const About = () => {
             Printing, Professional Services, Real Estate, Restaurant,
             Retail/E-Commerce, Sports, Technology, Travel & Transportation, and
             Utility Companies.
-          </p>
+          </Text>
         </div>
         <Box textAlign="center">
           <Link

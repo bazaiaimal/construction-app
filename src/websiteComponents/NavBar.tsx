@@ -109,14 +109,14 @@ const Navbar: React.FC = () => {
 
   return (
     <Box bgColor="black" color="white">
-      <Flex p={4} justifyContent="space-evenly">
+      <Flex p={4}>
         <Image src={Logo} boxSize="80px" borderRadius="20px" alt="logo" />
-        {/* <Spacer /> */}
+        <Spacer />
         <IconButton
           aria-label="Toggle navigation"
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
           onClick={onToggle}
-          display={{ base: "block", md: "none" }}
+          display={{ base: "grid", md: "none" }}
         />
         <Box
           display={{ base: isOpen ? "block" : "none", md: "flex" }}

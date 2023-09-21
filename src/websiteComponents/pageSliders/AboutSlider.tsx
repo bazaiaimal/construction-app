@@ -15,7 +15,13 @@ export const AboutPageSlider = () => {
     <>
       <ChakraProvider theme={extendTheme(theme)}>
         <Box p={1}>
-          <Carousel showThumbs={false} showStatus={false} infiniteLoop={true}>
+          <Carousel
+            showThumbs={false}
+            showStatus={false}
+            infiniteLoop={true}
+            autoPlay={true}
+            interval={3000}
+          >
             <div>
               <img src={aboutSlider} alt="About Slider" />
             </div>
