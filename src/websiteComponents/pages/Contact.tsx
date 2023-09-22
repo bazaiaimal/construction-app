@@ -21,7 +21,7 @@ const ContactPage: React.FC = () => {
     e.preventDefault();
     try {
       await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/SendEmail/SendEmail?receiverEmail=ak9971259@gmail.com&subject=Assistance`
+        `https://constraction-app.vercel.app/SendEmail?receiverEmail=${formData.email}&subject=Assistance&name=${formData.name}`
       );
 
       alert("Email sent successfully!");
