@@ -10,11 +10,11 @@ import {
   Container,
   Image,
   HStack,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { HomePageSlider } from "../pageSliders/HomePageSlider";
-import { Link } from "react-router-dom";
 import HireForServices from "../hireForServices/HireForService";
 import hireCivil from "../../assets/Images/civil profile.jpg";
 import hireElectrical from "../../assets/Images/electrical profile.jpg";
@@ -118,21 +118,21 @@ const HomePage = ({}: Props) => {
     {
       id: 2,
       Image: hireElectrical,
-      title: "Aleena",
+      title: "Aleena Nazir",
       description:
         "Electrical engineers design, develop, test and manage the manufacturing of electrical equipment, from electric motors and navigation systems to power generation equipment and the electrical components of vehicles and personal devices.",
     },
     {
       id: 3,
       Image: hireTechnical,
-      title: "Shanza",
+      title: "Shanza Hayat",
       description:
         "A technical engineer assists an engineer in maintaining equipment and systems in perfect condition and overseeing the quality of a company's products and services. Technical engineers work in many industries and perform duties related to civil, mechanical, electronic and telecommunication engineering.",
     },
     {
       id: 4,
       Image: hireArchitectural,
-      title: "Aimal",
+      title: "Aimal Khan Bazai",
       description:
         "Architectural engineers apply practical and theoretical knowledge to the engineering design of buildings and building systems. The goal is to engineer high-performance buildings that are sustainable, resilient, economically viable, that ensure the safety, health, comfort, and productivity of occupants.",
     },
@@ -182,18 +182,15 @@ const HomePage = ({}: Props) => {
         my="5"
         padding={8}
       >
-        <Heading as="h1" size="2xl" mb="4">
+        <Heading as="h1" size="2xl" mb="4" color="gold">
           Welcome to Our Construction Company
         </Heading>
         <Text fontSize="xl" mb="8">
           We build your dreams into reality.
         </Text>
-        <div className="container mt-4 mb-3">
+        <Container maxW="container.lg">
           <div className="row">
-            <div
-              className="col-lg-6"
-              style={{ flexWrap: "wrap", height: "40%" }}
-            >
+            <div className="col-sm-12 col-md-12 col-lg-6 mb-4">
               <Menu>
                 <MenuButton
                   bg="#161F30"
@@ -202,8 +199,7 @@ const HomePage = ({}: Props) => {
                   as={Button}
                   rightIcon={<BsChevronDown />}
                 >
-                  Civil Engineering Service:
-                  {selectedService?.type}
+                  Civil Engineering Service: <br /> {selectedService?.type}
                 </MenuButton>
                 <MenuList bg="gray">
                   {civilServices.map((service) => (
@@ -215,21 +211,16 @@ const HomePage = ({}: Props) => {
                     </MenuItem>
                   ))}
                 </MenuList>
-                <Container>
-                  <Text padding={3}>
-                    {selectedService
-                      ? selectedService.description
-                      : civilServices.length > 0
-                      ? civilServices[0].description
-                      : "No Civil Services Avaliable"}
-                  </Text>
-                </Container>
+                <Text padding={3} textAlign="justify">
+                  {selectedService
+                    ? selectedService.description
+                    : civilServices.length > 0
+                    ? civilServices[0].description
+                    : "No Civil Services Available"}
+                </Text>
               </Menu>
             </div>
-            <div
-              className="col-lg-6"
-              style={{ flexWrap: "wrap", height: "40%" }}
-            >
+            <div className="col-sm-12 col-md-12 col-lg-6 mb-4">
               <Menu>
                 <MenuButton
                   bg="#161F30"
@@ -238,7 +229,7 @@ const HomePage = ({}: Props) => {
                   as={Button}
                   rightIcon={<BsChevronDown />}
                 >
-                  Electrical Engineering Services:
+                  Electrical Engineering Services: <br />
                   {selectedElectricalService?.type}
                 </MenuButton>
                 <MenuList bg="gray">
@@ -251,20 +242,18 @@ const HomePage = ({}: Props) => {
                     </MenuItem>
                   ))}
                 </MenuList>
-                <Container>
-                  <Text padding={3}>
-                    {selectedElectricalService
-                      ? selectedElectricalService.description
-                      : electricalServices.length > 0
-                      ? electricalServices[0].description
-                      : "No electrical services available."}
-                  </Text>
-                </Container>
+                <Text padding={3} textAlign="justify">
+                  {selectedElectricalService
+                    ? selectedElectricalService.description
+                    : electricalServices.length > 0
+                    ? electricalServices[0].description
+                    : "No Electrical Services Available."}
+                </Text>
               </Menu>
             </div>
           </div>
-          <div className="row" style={{ height: "50%" }}>
-            <div className="col-lg-6">
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-6 mb-4">
               <Menu>
                 <MenuButton
                   bg="#161F30"
@@ -273,7 +262,8 @@ const HomePage = ({}: Props) => {
                   as={Button}
                   rightIcon={<BsChevronDown />}
                 >
-                  Architectural Service: {selectArchitectureService?.type}
+                  Architectural Service: <br />{" "}
+                  {selectArchitectureService?.type}
                 </MenuButton>
                 <MenuList bg="gray">
                   {architecturalServices.map((service) => (
@@ -285,18 +275,16 @@ const HomePage = ({}: Props) => {
                     </MenuItem>
                   ))}
                 </MenuList>
-                <Container>
-                  <Text padding={3}>
-                    {selectArchitectureService
-                      ? selectArchitectureService.description
-                      : architecturalServices.length > 0
-                      ? architecturalServices[0].description
-                      : "No Architectural services avaliable"}
-                  </Text>
-                </Container>
+                <Text padding={3} textAlign="justify">
+                  {selectArchitectureService
+                    ? selectArchitectureService.description
+                    : architecturalServices.length > 0
+                    ? architecturalServices[0].description
+                    : "No Architectural Services Available"}
+                </Text>
               </Menu>
             </div>
-            <div className="col-lg-6">
+            <div className="col-sm-12 col-md-12 col-lg-6 mb-4">
               <Menu>
                 <MenuButton
                   bg="#161F30"
@@ -304,7 +292,7 @@ const HomePage = ({}: Props) => {
                   as={Button}
                   rightIcon={<BsChevronDown />}
                 >
-                  Technical Engineering Services:
+                  Technical Engineering Services: <br />{" "}
                   {selectTechnicalService?.type}
                 </MenuButton>
                 <MenuList bg="gray">
@@ -317,29 +305,31 @@ const HomePage = ({}: Props) => {
                     </MenuItem>
                   ))}
                 </MenuList>
-                <Container>
-                  <Text padding={3}>
-                    {selectTechnicalService
-                      ? selectTechnicalService.description
-                      : techniciansServices.length > 0
-                      ? techniciansServices[0].description
-                      : "No technical services avaliabel"}
-                  </Text>
-                </Container>
+                <Text padding={3} textAlign="justify">
+                  {selectTechnicalService
+                    ? selectTechnicalService.description
+                    : techniciansServices.length > 0
+                    ? techniciansServices[0].description
+                    : "No Technical Services Available"}
+                </Text>
               </Menu>
             </div>
           </div>
-        </div>
-
-        <HStack padding={5}>
-          {profileImages.map((profile) => (
-            <HireForServices
-              key={profile.id}
-              imageUrl={profile.Image}
-              title={profile.title}
-              description={profile.description}
-            />
-          ))}
+        </Container>
+        <HStack>
+          <SimpleGrid
+            columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+            spacing={6}
+            padding="10px"
+          >
+            {profileImages.map((profile) => (
+              <HireForServices
+                imageUrl={profile.Image}
+                title={profile.title}
+                description={profile.description}
+              />
+            ))}
+          </SimpleGrid>
         </HStack>
       </Box>
     </>

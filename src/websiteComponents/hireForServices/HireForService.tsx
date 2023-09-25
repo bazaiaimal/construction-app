@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Heading, Container } from "@chakra-ui/react";
+import { Box, Image, Heading, Container, Button, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 interface HireForServicesProps {
@@ -15,24 +15,31 @@ const HireForServices: React.FC<HireForServicesProps> = ({
 }) => {
   return (
     <>
-      <Container>
-        <Box className="elementor-widget-container limestone-post-boxes">
-          <Box className="limestone-post-box thumb-top meta-before-title">
-            <Image src={imageUrl} alt="Post Thumbnail" boxSize={350} />
-            <Box className="post-content">
-              <Heading padding={2} as="h2" className="post-title">
-                {title}
-              </Heading>
-              <Container padding={2}>{description}</Container>
-              <Link
-                to="/contact"
-                className="btn btn-outline-primary"
-                color="#3B71CA"
-              >
-                Contact Engineer
-              </Link>
-            </Box>
-          </Box>
+      <Container maxW="container.lg" width="100%">
+        <Box display="flex" flexDirection="column" alignItems="center" my="5">
+          <Image
+            src={imageUrl}
+            alt="Post Thumbnail"
+            boxSize={350}
+            mt="3"
+            maxW="350px"
+          />
+          <Heading as="h2" mt="2" fontSize="xl" color={"gold"}>
+            {title}
+          </Heading>
+          <Text mt="2" justifyContent="center" textAlign="justify" height={190}>
+            {description}
+          </Text>
+          <Link to="/contact">
+            <Button
+              variant="outline"
+              colorScheme="blue"
+              borderColor="#3B71CA"
+              color="#3B71CA"
+            >
+              Contact Engineer
+            </Button>
+          </Link>
         </Box>
       </Container>
     </>
